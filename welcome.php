@@ -1,13 +1,27 @@
+<!-- jwt.io -->
+
+<!-- setcookie("variable", $value(ANYTHING), time() + 5(how much), "/") -->
+
 <?php
-session_start();
-$isLoggedIn=isset($_SESSION['auth']);
-if(!$isLoggedIn)
-{
-    echo"Not loggedin";
-}
-else{
-    echo"loggedin";
-}
+    // session_start();
+    // $isLoggedIn=isset($_SESSION['auth']);
+    // if (!$isLoggedIn)
+    // {
+    //     echo"Not loggedin";
+    // }
+    // else{
+    //     echo"loggedin";
+    // }
+
+    // cookie
+    $isLoggedIn=isset($_COOKIE['auth']);
+    if (!$isLoggedIn)
+    {
+        echo"Not loggedin";
+    }
+    else{
+        echo"loggedin";
+    }
 ?>
 
 <!DOCTYPE html>

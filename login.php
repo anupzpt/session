@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 if($_SERVER['REQUEST_METHOD']==='POST'){
     $email=$_POST['email'];
     $password=$_POST['password'];
@@ -7,11 +7,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     $db_password="anuanu";
     if($email==$db_email && $password==$db_password)
     {
-    $_SESSION['auth']=true;
-        header('location: ./welcome.php');
+      // $_SESSION['auth']=true;  
+      setcookie("auth", $email, time() + 5, "/");
+      header('location: ./welcome.php');
     }
     else{
-        header('location: ./login.php');
+      header('location: ./login.php');
     }
 }
 ?>
